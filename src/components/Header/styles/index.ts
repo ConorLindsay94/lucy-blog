@@ -23,15 +23,21 @@ export const styles = {
     },
   },
   bag: {
-    paddingLeft: "8px",
-    order: 1
+    paddingLeft: "16px",
+    order: 1,
+    [mq[4]]: {
+      paddingLeft: "8px",
+    },
   },
   logoLink: {
     order: 2,
   },
   menu: {
-    paddingRight: "8px",
-    order: 3
+    paddingRight: "16px",
+    order: 3,
+    [mq[4]]: {
+      paddingRight: "8px",
+    },
   },
   icon: {
     height: "25px",
