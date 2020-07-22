@@ -37,6 +37,5 @@ module.exports = {
       options: contentfulConfig,
     },
     "gatsby-plugin-typescript",
-    "gatsby-plugin-emotion",
   ],
 };
