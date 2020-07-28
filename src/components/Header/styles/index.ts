@@ -7,7 +7,7 @@ export const styles = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    maxWidth: "1200px",
+    maxWidth: "900px",
     margin: "0 auto",
     height: "100px",
     width: "100%",
@@ -18,14 +18,14 @@ export const styles = {
     [mq[1]]: {
       height: "150px",
     },
-    [mq[4]]: {
+    [mq[3]]: {
       padding: 0
     },
   },
   bag: {
     marginLeft: "16px",
     order: 1,
-    [mq[4]]: {
+    [mq[3]]: {
       marginLeft: "8px",
     },
   },
@@ -36,7 +36,7 @@ export const styles = {
     cursor: "pointer",
     marginRight: "16px",
     order: 3,
-    [mq[4]]: {
+    [mq[3]]: {
       marginRight: "8px",
     },
   },

@@ -36,7 +36,7 @@ export const globalStyles = {
     }
   },
   childrenContainer: {
-    maxWidth: "1200px",
+    maxWidth: "900px",
     margin: "0 auto",
   },
   heroImage: {
@@ -45,7 +45,7 @@ export const globalStyles = {
   },
   mobileMenu: {
     position: "absolute",
-    maxWidth: "1200px",
+    maxWidth: "900px",
     left: 0,
     right: 0,
     margin: "auto",
