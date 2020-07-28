@@ -12,7 +12,12 @@ export const styles = {
   },
   recentPost: {
     width: "100%",
+    marginTop: "32px",
+    "&:first-of-type": {
+      marginTop: 0,
+    },
     [mq[1]]: {
+      marginTop: 0,
       width: "30%",
     },
   },
