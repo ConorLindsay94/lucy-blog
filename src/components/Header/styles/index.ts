@@ -1,5 +1,6 @@
 import { CSSObject } from "@emotion/core";
 import { mq } from "../../../styles/global";
+import { colors } from "../../../styles/colors";
 
 export const styles = {
   header: {
@@ -10,8 +11,7 @@ export const styles = {
     margin: "0 auto",
     height: "100px",
     width: "100%",
-    borderBottom: "1px solid black",
-    padding: "0px 8px",
+    borderBottom: `2px solid ${colors.primary}`,
     [mq[0]]: {
       height: "120px",
     },
@@ -23,20 +23,21 @@ export const styles = {
     },
   },
   bag: {
-    paddingLeft: "16px",
+    marginLeft: "16px",
     order: 1,
     [mq[4]]: {
-      paddingLeft: "8px",
+      marginLeft: "8px",
     },
   },
   logoLink: {
     order: 2,
   },
   menu: {
-    paddingRight: "16px",
+    cursor: "pointer",
+    marginRight: "16px",
     order: 3,
     [mq[4]]: {
-      paddingRight: "8px",
+      marginRight: "8px",
     },
   },
   icon: {
@@ -45,18 +46,6 @@ export const styles = {
     [mq[1]]: {
       height: "30px",
       width: "30px",
-    }
-  },
-  iconContainer: {
-    paddingRight: "8px",
-    "& svg": {
-      marginRight: "16px",
-      "&:last-of-type": {
-        marginRight: 0,
-      }
-    },
-    [mq[1]]: {
-      paddingRight: "16px",
     }
   },
   logo: {

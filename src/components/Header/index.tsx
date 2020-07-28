@@ -7,8 +7,9 @@ import logo from "../../assets/lucy-in-the-sky-logo.png";
 import menuIcon from "../../assets/svg/menu.svg";
 // @ts-ignore
 import shoppingBag from "../../assets/svg/shopping-bag.svg";
+import { HeaderProps } from "./interfaces/props";
 
-const Header: React.FC = () => {
+const Header: React.FC<HeaderProps> = ({ menuActive, toggleMenu }) => {
   return (
     <header css={styles.header}>
       <Link css={styles.logoLink} to="/">
@@ -17,7 +18,7 @@ const Header: React.FC = () => {
       <svg css={[styles.icon, styles.bag]}>
         <use xlinkHref={`#${shoppingBag.id}`} />
       </svg>
-      <svg css={[styles.icon, styles.menu]}>
+      <svg onClick={() => toggleMenu(!menuActive)} css={[styles.icon, styles.menu]}>
         <use xlinkHref={`#${menuIcon.id}`} />
       </svg>
     </header>
