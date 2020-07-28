@@ -5,18 +5,20 @@ import Layout from "../components/Layout";
 import { globalStyles } from "../styles/global";
 import { styles } from "../styles/pages/home";
 
-const Index = ({ data }) => {
+const Index: React.FC = ({ data }) => {
   const { allContentfulBlogPost: blogPosts, contentfulAsset: homeHero } = data;
   const recentPosts = blogPosts.edges.slice(0, 3);
   console.log(recentPosts);
 
   return (
     <Layout>
-      <Img
-        css={globalStyles.heroImage}
-        alt={homeHero.title}
-        fluid={homeHero.fluid}
-      />
+      <section>
+        <Img
+          css={globalStyles.heroImage}
+          alt={homeHero.title}
+          fluid={homeHero.fluid}
+        />
+      </section>
       <section css={globalStyles.container}>
         <h2 css={styles.title}>Latest blog posts</h2>
         <div css={styles.recentPostsContainer}>

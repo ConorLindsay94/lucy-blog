@@ -9,6 +9,15 @@ export const globalStyles = {
   "*, *:before, *:after": {
     boxSizing: "border-box",
   } as CSSObject,
+  "h1": {
+    fontSize: "40px",
+  },
+  "h2": {
+    fontSize: "32px",
+  },
+  "h3": {
+    fontSize: "24px",
+  },
   "h1, h2, h3": {
     fontFamily: "Poiret One",
   },
