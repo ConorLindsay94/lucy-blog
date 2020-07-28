@@ -21,7 +21,7 @@ export const globalStyles = {
   },
   heroImage: {
     height: "61.8vh",
-    maxHeight: "500px",
+    maxHeight: "400px",
   },
   mobileMenu: {
     position: "absolute",
