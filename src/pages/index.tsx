@@ -1,11 +1,15 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../components/Layout";
 import { globalStyles } from "../styles/global";
+import { styles } from "../styles/pages/home";
 
 const Index = ({ data }) => {
-  const { contentfulAsset: homeHero } = data;
+  const { allContentfulBlogPost: blogPosts, contentfulAsset: homeHero } = data;
+  const recentPosts = blogPosts.edges.slice(0, 3);
+  console.log(recentPosts);
+
   return (
     <Layout>
       <Img
@@ -13,6 +17,25 @@ const Index = ({ data }) => {
         alt={homeHero.title}
         fluid={homeHero.fluid}
       />
+      <section css={globalStyles.container}>
+        <h2 css={styles.title}>Latest blog posts</h2>
+        <div css={styles.recentPostsContainer}>
+          {recentPosts.map(({ node }) => (
+            <article css={styles.recentPost}>
+              <Link to={`/blog/${node.slug}`}>
+                <Img alt={node.title} fluid={node.heroImage.fluid} />
+                <h3>{node.title}</h3>
+              </Link>
+              <small>{node.publishDate}</small>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: node.description.childMarkdownRemark.html,
+                }}
+              />
+            </article>
+          ))}
+        </div>
+      </section>
     </Layout>
   );
 };

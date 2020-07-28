@@ -12,8 +12,19 @@ export const globalStyles = {
   "h1, h2, h3": {
     fontFamily: "Poiret One",
   },
+  "a": {
+    textDecoration: "none",
+    color: colors.black,
+  },
   body: {
     margin: 0,
+    fontFamily: "Open Sans",
+  },
+  container: {
+    padding: "0px 16px",
+    [mq[3]]: {
+      padding: 0,
+    }
   },
   childrenContainer: {
     maxWidth: "1200px",
