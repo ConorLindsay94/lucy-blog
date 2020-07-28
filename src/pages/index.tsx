@@ -1,13 +1,20 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import React from "react";
+import { graphql } from "gatsby";
+import Img from "gatsby-image";
+import Layout from "../components/Layout";
+import { globalStyles } from "../styles/global";
 
-const Index: React.FC = () => {
+const Index = ({ data }) => {
+  const { contentfulAsset: homeHero } = data;
   return (
     <Layout>
-      <h1>Home</h1>
+      <Img
+        css={globalStyles.heroImage}
+        alt={homeHero.title}
+        fluid={homeHero.fluid}
+      />
     </Layout>
-  )
+  );
 };
 
 export default Index;
@@ -34,5 +41,15 @@ export const pageQuery = graphql`
         }
       }
     }
+    contentfulAsset(title: { eq: "Home hero" }) {
+      id
+      title
+      fluid(maxHeight: 480, resizingBehavior: PAD, background: "rgb:000000") {
+        base64
+        tracedSVG
+        srcWebp
+        srcSetWebp
+      }
+    }
   }
-`
+`;

@@ -7,6 +7,8 @@ import logo from "../../assets/lucy-in-the-sky-logo.png";
 import menuIcon from "../../assets/svg/menu.svg";
 // @ts-ignore
 import shoppingBag from "../../assets/svg/shopping-bag.svg";
+// @ts-ignore
+import closeIcon from "../../assets/svg/close.svg";
 import { HeaderProps } from "./interfaces/props";
 
 const Header: React.FC<HeaderProps> = ({ menuActive, toggleMenu }) => {
@@ -19,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({ menuActive, toggleMenu }) => {
         <use xlinkHref={`#${shoppingBag.id}`} />
       </svg>
       <svg onClick={() => toggleMenu(!menuActive)} css={[styles.icon, styles.menu]}>
-        <use xlinkHref={`#${menuIcon.id}`} />
+        <use xlinkHref={`#${!menuActive ? menuIcon.id : closeIcon.id}`} />
       </svg>
     </header>
   );

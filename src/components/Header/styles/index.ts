@@ -11,7 +11,7 @@ export const styles = {
     margin: "0 auto",
     height: "100px",
     width: "100%",
-    borderBottom: `2px solid ${colors.primary}`,
+    borderBottom: `2px solid ${colors.peach}`,
     [mq[0]]: {
       height: "120px",
     },

@@ -44,6 +44,7 @@ const Layout: React.FC = ({ children }) => {
     <main>
       <Global styles={globalStyles} />
       <Helmet>
+        <title>Lucy in the Sky</title>
         <link
           href="https://fonts.googleapis.com/css?family=Open+Sans"
           rel="stylesheet"
@@ -67,11 +68,13 @@ const Layout: React.FC = ({ children }) => {
           <li>
             <span onClick={() => goTo("/blog/")}>Blog</span>
           </li>
+          <li>
+            <span onClick={() => goTo("/shop/")}>Shop</span>
+          </li>
         </ul>
       </div>
-      <Header menuActive={menuActive} toggleMenu={toggleMenu}>
-        {children}
-      </Header>
+      <Header menuActive={menuActive} toggleMenu={toggleMenu} />
+      <div css={globalStyles.childrenContainer}>{children}</div>
     </main>
   );
 };

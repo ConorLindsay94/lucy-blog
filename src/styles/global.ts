@@ -9,11 +9,19 @@ export const globalStyles = {
   "*, *:before, *:after": {
     boxSizing: "border-box",
   } as CSSObject,
-  "h1 h2 h3": {
+  "h1, h2, h3": {
     fontFamily: "Poiret One",
   },
   body: {
     margin: 0,
+  },
+  childrenContainer: {
+    maxWidth: "1200px",
+    margin: "0 auto",
+  },
+  heroImage: {
+    height: "61.8vh",
+    maxHeight: "500px",
   },
   mobileMenu: {
     position: "absolute",
@@ -44,13 +52,18 @@ export const globalStyles = {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        color: colors.white,
+        color: colors.black,
         fontFamily: "Poiret One",
+        letterSpacing: "2px",
+        marginTop: "16px",
+        "&:first-of-type": {
+          marginTop: 0,
+        },
         "& span": {
           letterSpacing: "1px",
         },
         "& svg": {
-          fill: colors.white,
+          fill: colors.black,
           height: "35px",
           width: "35px",
         },
