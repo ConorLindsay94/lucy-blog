@@ -55,10 +55,13 @@ export const globalStyles = {
     },
     "& ul": {
       listStyle: "none",
-      fontSize: "42px",
+      fontSize: "24px",
       margin: 0,
       padding: 0,
       marginTop: "120px",
+      [mq[1]]: {
+        fontSize: "32px",
+      },
       "& li": {
         display: "flex",
         alignItems: "center",
