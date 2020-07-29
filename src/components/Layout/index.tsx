@@ -1,14 +1,16 @@
+import { Global } from "@emotion/core";
 import React, { useState, useRef, useEffect } from "react";
+import { navigate } from "gatsby";
 import Helmet from "react-helmet";
 import {
   disableBodyScroll,
   enableBodyScroll,
   clearAllBodyScrollLocks,
 } from "body-scroll-lock";
+
 import Header from "../Header";
-import { Global } from "@emotion/core";
+import Footer from "../Footer";
 import { globalStyles } from "../../styles/global";
-import { navigate } from "gatsby";
 
 const Layout: React.FC = ({ children }) => {
   const [menuActive, setMenuActive] = useState<boolean>(false);
@@ -41,7 +43,7 @@ const Layout: React.FC = ({ children }) => {
   }, [menuActive]);
 
   return (
-    <main>
+    <>
       <Global styles={globalStyles} />
       <Helmet>
         <title>Lucy in the Sky</title>
@@ -63,19 +65,26 @@ const Layout: React.FC = ({ children }) => {
       >
         <ul>
           <li>
-            <span onClick={() => goTo("/")}>Home</span>
+            <span css={globalStyles.navLink} onClick={() => goTo("/")}>
+              Home
+            </span>
           </li>
           <li>
-            <span onClick={() => goTo("/blog/")}>Blog</span>
+            <span css={globalStyles.navLink} onClick={() => goTo("/blog/")}>
+              Blog
+            </span>
           </li>
           <li>
-            <span onClick={() => goTo("/shop/")}>Shop</span>
+            <span css={globalStyles.navLink} onClick={() => goTo("/shop/")}>
+              Shop
+            </span>
           </li>
         </ul>
       </div>
       <Header menuActive={menuActive} toggleMenu={toggleMenu} />
-      <div css={globalStyles.childrenContainer}>{children}</div>
-    </main>
+      <main css={globalStyles.childrenContainer}>{children}</main>
+      <Footer />
+    </>
   );
 };
 

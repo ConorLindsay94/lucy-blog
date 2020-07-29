@@ -8,7 +8,6 @@ import { styles } from "../styles/pages/home";
 const Index: React.FC = ({ data }) => {
   const { allContentfulBlogPost: blogPosts, contentfulAsset: homeHero } = data;
   const recentPosts = blogPosts.edges.slice(0, 3);
-  console.log(recentPosts);
 
   return (
     <Layout>

@@ -43,6 +43,9 @@ export const globalStyles = {
     height: "61.8vh",
     maxHeight: "400px",
   },
+  pageHeader: {
+    textAlign: "center",
+  },
   mobileMenu: {
     position: "absolute",
     maxWidth: "900px",
@@ -96,4 +99,7 @@ export const globalStyles = {
   mobileMenuActive: {
     height: "100vh",
   },
+  navLink: {
+    cursor: "pointer",
+  }
 };
