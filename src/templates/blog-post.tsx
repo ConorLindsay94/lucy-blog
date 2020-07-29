@@ -9,14 +9,14 @@ const BlogPost: React.FC = ({ data }) => {
   const { contentfulBlogPost: blogPost } = data;
   return (
     <Layout>
-      <section css={globalStyles.container}>
+      <section>
         <Img
           css={globalStyles.heroImage}
           title={blogPost.title}
           fluid={blogPost.heroImage.fluid}
         />
       </section>
-      <section>
+      <section css={globalStyles.container}>
         <h1 css={styles.header}>{blogPost.title}</h1>
         <div
           dangerouslySetInnerHTML={{
