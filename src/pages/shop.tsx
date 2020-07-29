@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import Layout from "../components/Layout";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import { styles } from "../styles/pages/shop";
 
@@ -17,10 +17,16 @@ const Shop: React.FC = ({ data }) => {
       <section css={styles.categoriesContainer}>
         {categories.map(({ node }) => (
           <article css={styles.category}>
-            <div css={styles.imageContainer}>
-              <Img css={styles.image} title={node.title} fluid={node.displayImage.fluid} />
-            </div>
-            <h2 css={styles.categoryTitle}>{node.name}</h2>
+            <Link to={`/shop/${node.slug}/`}>
+              <div css={styles.imageContainer}>
+                <Img
+                  css={styles.image}
+                  title={node.title}
+                  fluid={node.displayImage.fluid}
+                />
+              </div>
+              <h2 css={styles.categoryTitle}>{node.name}</h2>
+            </Link>
           </article>
         ))}
       </section>
@@ -37,6 +43,7 @@ export const pageQuery = graphql`
         node {
           id
           name
+          slug
           displayImage {
             fluid {
               base64

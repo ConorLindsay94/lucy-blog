@@ -17,7 +17,7 @@ export const styles = {
   categoryTitle: {
     position: "absolute",
     color: "white",
-    textShadow: "0px 2px 4px rgba(0, 0, 0, 1)",
+    textShadow: "0px 4px 5px rgba(0, 0, 0, 1)",
     top: "43%",
     bottom: "50%",
     width: "100%",
