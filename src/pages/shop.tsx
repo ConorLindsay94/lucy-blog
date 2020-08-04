@@ -8,7 +8,6 @@ import { styles } from "../styles/pages/shop";
 const Shop: React.FC = ({ data }) => {
   const categories = data.allContentfulCategory.edges;
 
-  console.log(categories);
   return (
     <Layout>
       <Helmet>

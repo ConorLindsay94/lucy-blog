@@ -60,7 +60,6 @@ exports.createPages = ({ graphql, actions }) => {
           });
           if (products && products.length) {
             products.forEach((product) => {
-              console.log(product)
               createPage({
                 path: `/shop/${category.node.slug}/${product.slug}/`,
                 component: productPage,

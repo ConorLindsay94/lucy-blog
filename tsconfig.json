@@ -1,7 +1,7 @@
 {
   "include": ["./src/**/*"],
   "compilerOptions": {
-    "types": ["@emotion/core"],
+    "types": ["@emotion/core", "node"],
     "target": "esnext",
     "module": "commonjs",
     "lib": ["dom", "es2017"],

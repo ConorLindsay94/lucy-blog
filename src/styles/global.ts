@@ -45,6 +45,7 @@ export const globalStyles = {
   },
   pageHeader: {
     textAlign: "center",
+    fontSize: "32px",
   },
   mobileMenu: {
     position: "absolute",
