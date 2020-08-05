@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import { styles } from "../styles/pages/shop";
+import { globalStyles } from "../styles/global";
 
 const Shop: React.FC = ({ data }) => {
   const categories = data.allContentfulCategory.edges;
@@ -24,7 +25,7 @@ const Shop: React.FC = ({ data }) => {
                   fluid={node.displayImage.fluid}
                 />
               </div>
-              <h2 css={styles.categoryTitle}>{node.name}</h2>
+              <h2 css={globalStyles.categoryTitle}>{node.name}</h2>
             </Link>
           </article>
         ))}

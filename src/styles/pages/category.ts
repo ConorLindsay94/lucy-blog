@@ -1,6 +1,9 @@
 import { mq, betweenMq } from "../global";
 
 export const styles = {
+  imageContainer: {
+    position: "relative",
+  },
   productsContainer: {
     display: "flex",
     flexDirection: "row",

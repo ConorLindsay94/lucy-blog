@@ -1,4 +1,5 @@
 import { graphql } from "gatsby";
+import Img from "gatsby-image";
 import React, { useEffect, useState } from "react";
 
 import Layout from "../components/Layout";
@@ -6,6 +7,7 @@ import contentfulClient from "../services/contentful";
 import { config } from "../../config/config";
 import { globalStyles } from "../styles/global";
 import { styles as categoryStyles } from "../styles/pages/category";
+import LoadingState from "../components/LoadingState";
 
 const categoryTypes = config.contentTypes.find(
   (data) => data.name === "category"
@@ -29,24 +31,34 @@ const Category: React.FC = ({ data }) => {
 
   return (
     <Layout>
+      <section css={categoryStyles.imageContainer}>
+        <Img
+          css={globalStyles.heroImage}
+          title={staticCategory.name}
+          fluid={staticCategory.displayImage.fluid}
+        />
+        <h1 css={globalStyles.categoryTitle}>{staticCategory.name}</h1>
+      </section>
       <section>
         <div css={[globalStyles.container, categoryStyles.productsContainer]}>
-          {products
-            ? products.map((product) => (
-                <article css={categoryStyles.product}>
-                  <div
-                    style={{
-                      backgroundImage: `url("${product.fields.images[0].fields.file.url}")`,
-                    }}
-                    css={categoryStyles.previewImage}
-                  ></div>
-                  <div css={categoryStyles.productInfo}>
-                    <h3>{product.fields.name}</h3>
-                    <small>£{parseFloat(product.fields.price)}</small>
-                  </div>
-                </article>
-              ))
-            : null}
+          {products ? (
+            products.map((product) => (
+              <article css={categoryStyles.product}>
+                <div
+                  style={{
+                    backgroundImage: `url("${product.fields.images[0].fields.file.url}")`,
+                  }}
+                  css={categoryStyles.previewImage}
+                ></div>
+                <div css={categoryStyles.productInfo}>
+                  <h3>{product.fields.name}</h3>
+                  <small>£{parseFloat(product.fields.price)}</small>
+                </div>
+              </article>
+            ))
+          ) : (
+            <LoadingState />
+          )}
         </div>
       </section>
     </Layout>
@@ -61,6 +73,15 @@ export const query = graphql`
       id
       name
       slug
+      displayImage {
+        id
+        fluid {
+          base64
+          tracedSVG
+          srcWebp
+          srcSetWebp
+        }
+      }
     }
   }
 `;

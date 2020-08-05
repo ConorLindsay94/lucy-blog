@@ -53,6 +53,23 @@ export const globalStyles = {
     textAlign: "center",
     fontSize: "32px",
   },
+  categoryTitle: {
+    position: "absolute",
+    color: "white",
+    textShadow: "0px 4px 5px rgba(0, 0, 0, 1)",
+    top: "43%",
+    bottom: "50%",
+    width: "100%",
+    margin: "auto",
+    textAlign: "center",
+    fontSize: "28px",
+    [mq[0]]: {
+      fontSize: "32px",
+    },
+    [mq[2]]: {
+      fontSize: "40px",
+    },
+  },
   mobileMenu: {
     position: "absolute",
     maxWidth: "900px",
