@@ -10,21 +10,13 @@ export const styles = {
     width: "47.5%",
     marginRight: "2.5%",
     marginBottom: "32px",
-    [mq[0]]: {
-      width: "31.6%",
-    },
-    [mq[2]]: {
-      width: "23.1%",
-      "&:nth-child(4n)": {
-        marginRight: 0,
-      },
-    },
     [betweenMq(0, 576)]: {
       "&:nth-child(2n)": {
         marginRight: 0,
       },
     },
-    [betweenMq(576, 992)]: {
+    [mq[0]]: {
+      width: "31.6%",
       "&:nth-child(3n)": {
         marginRight: 0,
       },
