@@ -49,6 +49,9 @@ export const globalStyles = {
     height: "61.8vh",
     maxHeight: "400px",
   },
+  heroImageCategory: {
+    maxHeight: "250px",
+  },
   pageHeader: {
     textAlign: "center",
     fontSize: "32px",

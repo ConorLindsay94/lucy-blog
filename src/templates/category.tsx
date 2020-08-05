@@ -33,7 +33,7 @@ const Category: React.FC = ({ data }) => {
     <Layout>
       <section css={categoryStyles.imageContainer}>
         <Img
-          css={globalStyles.heroImage}
+          css={[globalStyles.heroImage, globalStyles.heroImageCategory]}
           title={staticCategory.name}
           fluid={staticCategory.displayImage.fluid}
         />
