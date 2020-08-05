@@ -30,14 +30,16 @@ const Category: React.FC = ({ data }) => {
   return (
     <Layout>
       <section>
-        <h1 css={globalStyles.pageHeader}>{staticCategory.name}</h1>
         <div css={[globalStyles.container, categoryStyles.productsContainer]}>
           {products
             ? products.map((product) => (
                 <article css={categoryStyles.product}>
-                  <div css={categoryStyles.previewImage}>
-                    <img src={product.fields.images[0].fields.file.url} />
-                  </div>
+                  <div
+                    style={{
+                      backgroundImage: `url("${product.fields.images[0].fields.file.url}")`,
+                    }}
+                    css={categoryStyles.previewImage}
+                  ></div>
                   <div css={categoryStyles.productInfo}>
                     <h3>{product.fields.name}</h3>
                     <small>£{parseFloat(product.fields.price)}</small>

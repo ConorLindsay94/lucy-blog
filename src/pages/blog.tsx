@@ -9,7 +9,6 @@ const Blog: React.FC = () => {
       <Helmet>
         <title>Lucy in the Sky | Blog</title>
       </Helmet>
-      <h1 css={globalStyles.pageHeader}>Blog</h1>
     </Layout>
   );
 };

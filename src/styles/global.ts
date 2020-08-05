@@ -3,7 +3,13 @@ import { colors } from "./colors";
 
 const breakpoints = [576, 768, 992, 1200];
 
+export type BreakpointValues = 0 | 576 | 768 | 992 | 1200;
+
 export const mq = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
+
+export const betweenMq = (first: BreakpointValues, second: BreakpointValues) => {
+  return `@media (min-width:${first}px) and (max-width:${second}px)`;
+}
 
 export const globalStyles = {
   "*, *:before, *:after": {
