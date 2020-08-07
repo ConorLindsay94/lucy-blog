@@ -16,13 +16,31 @@ export const globalStyles = {
     boxSizing: "border-box",
   } as CSSObject,
   "h1": {
-    fontSize: "40px",
+    fontSize: "25px",
+    [mq[0]]: {
+      fontSize: "30px",
+    },
+    [mq[2]]: {
+      fontSize: "40px",
+    }
   },
   "h2": {
-    fontSize: "32px",
+    fontSize: "20px",
+    [mq[0]]: {
+      fontSize: "25px",
+    },
+    [mq[2]]: {
+      fontSize: "32px",
+    }
   },
   "h3": {
-    fontSize: "24px",
+    fontSize: "18px",
+    [mq[0]]: {
+      fontSize: "20px",
+    },
+    [mq[2]]: {
+      fontSize: "24px",
+    }
   },
   "h1, h2, h3": {
     fontFamily: "Poiret One",
