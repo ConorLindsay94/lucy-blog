@@ -68,11 +68,8 @@ export const pageQuery = graphql`
     contentfulAsset(title: { eq: "Home hero" }) {
       id
       title
-      fluid(maxHeight: 480, resizingBehavior: PAD, background: "rgb:000000") {
-        base64
-        tracedSVG
-        srcWebp
-        srcSetWebp
+      fluid(maxHeight: 480, resizingBehavior: SCALE) {
+        ...GatsbyContentfulFluid_noBase64
       }
     }
   }
