@@ -1,6 +1,13 @@
 import { mq, betweenMq } from "../global";
 
 export const styles = {
+  emptyState: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "50vh",
+    width: "100%",
+  },
   imageContainer: {
     position: "relative",
   },

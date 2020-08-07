@@ -13,6 +13,14 @@ const categoryTypes = config.contentTypes.find(
   (data) => data.name === "category"
 )!.entries;
 
+const EmptyState = () => {
+  return (
+    <div css={categoryStyles.emptyState}>
+      <p>None available.</p>
+    </div>
+  )
+}
+
 const Category: React.FC = ({ data }) => {
   const [products, setProducts] = useState<Array<any> | null>(null);
   const staticCategory = data.contentfulCategory;
@@ -43,20 +51,21 @@ const Category: React.FC = ({ data }) => {
       <section>
         <div css={[globalStyles.container, categoryStyles.productsContainer]}>
           {products ? (
-            products.map((product) => (
-              <article css={categoryStyles.product}>
-                <div
-                  style={{
-                    backgroundImage: `url("${product.fields.images[0].fields.file.url}")`,
-                  }}
-                  css={categoryStyles.previewImage}
-                ></div>
-                <div css={categoryStyles.productInfo}>
-                  <h3>{product.fields.name}</h3>
-                  <small>£{parseFloat(product.fields.price)}</small>
-                </div>
-              </article>
-            ))
+            products.length ?
+              products.map((product) => (
+                <article css={categoryStyles.product}>
+                  <div
+                    style={{
+                      backgroundImage: `url("${product.fields.images[0].fields.file.url}")`,
+                    }}
+                    css={categoryStyles.previewImage}
+                  ></div>
+                  <div css={categoryStyles.productInfo}>
+                    <h3>{product.fields.name}</h3>
+                    <small>£{parseFloat(product.fields.price)}</small>
+                  </div>
+                </article>
+              )) : <EmptyState />
           ) : (
             <LoadingState />
           )}
