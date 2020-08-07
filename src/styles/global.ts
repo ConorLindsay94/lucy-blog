@@ -97,7 +97,7 @@ export const globalStyles = {
     width: "100%",
     margin: "auto",
     textAlign: "center",
-    fontSize: "22px",
+    fontSize: "25px",
     [mq[0]]: {
       fontSize: "32px",
     },
