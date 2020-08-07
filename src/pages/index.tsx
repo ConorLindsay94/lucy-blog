@@ -27,12 +27,14 @@ const Index: React.FC = ({ data }) => {
                 <Img alt={node.title} fluid={node.heroImage.fluid} />
                 <h3>{node.title}</h3>
               </Link>
-              <small>{node.publishDate}</small>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: node.description.childMarkdownRemark.html,
-                }}
-              />
+              <div css={styles.meta}>
+                <small>{node.publishDate}</small>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: node.description.childMarkdownRemark.html,
+                  }}
+                />
+              </div>
             </article>
           ))}
         </div>

@@ -16,10 +16,19 @@ export const styles = {
     "&:first-of-type": {
       marginTop: 0,
     },
+    "& h3": {
+      margin: "8px 0px",
+    },
     [mq[1]]: {
       marginTop: 0,
       width: "30%",
     },
+  },
+  meta: {
+    "& p": {
+      margin: 0,
+      marginTop: "8px",
+    }
   },
   title: {
     textAlign: "center",
