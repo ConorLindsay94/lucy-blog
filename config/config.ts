@@ -4,16 +4,19 @@ export const config = {
       name: "category",
       entries: [
         {
-          name: "jewellery",
+          name: "Jewellery",
           id: "57YD64mG3AF5YTjccjw1XC",
+          slug: "jewellery",
         },
         {
-          name: "accessories",
+          name: "Accessories",
           id: "FSUZcqtJlbbPJPw6j229h",
+          slug: "accessories",
         },
         {
-          name: "clothing",
+          name: "Clothing",
           id: "30QjAm1dLzyY1vbNHh13V4",
+          slug: "clothing",
         },
       ]
     }

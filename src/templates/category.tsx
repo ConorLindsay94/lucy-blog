@@ -21,9 +21,10 @@ const Category: React.FC = ({ data }) => {
     contentfulClient
       .getEntries({
         content_type: "product",
-        "fields.category.sys.id": categoryTypes.find(
+        "fields.category.sys.contentType.sys.id": "category",
+        "fields.category.fields.name": categoryTypes.find(
           (category) => category.name === staticCategory.name
-        )?.id,
+        )?.name,
       })
       .then((response) => setProducts(response.items))
       .catch(console.error);

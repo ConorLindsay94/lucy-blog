@@ -37,24 +37,38 @@ export const globalStyles = {
   },
   container: {
     padding: "0px 16px",
-    [mq[3]]: {
+    [mq[2]]: {
       padding: 0,
     }
   },
   childrenContainer: {
     maxWidth: "900px",
     margin: "0 auto",
+    paddingBottom: "5rem",
+    [mq[2]]: {
+      paddingBottom: "8rem",
+    },
   },
   heroImage: {
     height: "61.8vh",
     maxHeight: "400px",
   },
   heroImageCategory: {
-    maxHeight: "250px",
+    maxHeight: "100px",
+    [mq[0]]: {
+      maxHeight: "150px",
+    },
+    [mq[2]]: {
+      maxHeight: "200px",
+    },
   },
   pageHeader: {
     textAlign: "center",
     fontSize: "32px",
+  },
+  pageContainer: {
+    position: "relative",
+    minHeight: "100vh",
   },
   categoryTitle: {
     position: "absolute",
@@ -65,7 +79,7 @@ export const globalStyles = {
     width: "100%",
     margin: "auto",
     textAlign: "center",
-    fontSize: "28px",
+    fontSize: "22px",
     [mq[0]]: {
       fontSize: "32px",
     },

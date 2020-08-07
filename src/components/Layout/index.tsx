@@ -43,7 +43,7 @@ const Layout: React.FC = ({ children }) => {
   }, [menuActive]);
 
   return (
-    <>
+    <div css={globalStyles.pageContainer}>
       <Global styles={globalStyles} />
       <Helmet>
         <title>Lucy in the Sky</title>
@@ -84,7 +84,7 @@ const Layout: React.FC = ({ children }) => {
       <Header menuActive={menuActive} toggleMenu={toggleMenu} />
       <main css={globalStyles.childrenContainer}>{children}</main>
       <Footer />
-    </>
+    </div>
   );
 };
 

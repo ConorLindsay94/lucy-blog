@@ -1,6 +1,6 @@
 export const styles = {
   container: {
-    height: "360px",
+    height: "50vh",
     width: "100vw",
     display: "flex",
     justifyContent: "center",
