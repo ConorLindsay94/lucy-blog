@@ -92,7 +92,7 @@ export const globalStyles = {
     position: "absolute",
     color: "white",
     textShadow: "0px 4px 5px rgba(0, 0, 0, 1)",
-    top: "43%",
+    top: "37%",
     bottom: "50%",
     width: "100%",
     margin: "auto",

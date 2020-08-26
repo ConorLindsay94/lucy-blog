@@ -1,4 +1,4 @@
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import React, { useEffect, useState } from "react";
 
@@ -18,8 +18,8 @@ const EmptyState = () => {
     <div css={categoryStyles.emptyState}>
       <p>None available.</p>
     </div>
-  )
-}
+  );
+};
 
 const Category: React.FC = ({ data }) => {
   const [products, setProducts] = useState<Array<any> | null>(null);
@@ -51,21 +51,28 @@ const Category: React.FC = ({ data }) => {
       <section>
         <div css={[globalStyles.container, categoryStyles.productsContainer]}>
           {products ? (
-            products.length ?
+            products.length ? (
               products.map((product) => (
                 <article css={categoryStyles.product}>
-                  <div
-                    style={{
-                      backgroundImage: `url("${product.fields.images[0].fields.file.url}")`,
-                    }}
-                    css={categoryStyles.previewImage}
-                  ></div>
-                  <div css={categoryStyles.productInfo}>
-                    <h3>{product.fields.name}</h3>
-                    <small>£{parseFloat(product.fields.price)}</small>
-                  </div>
+                  <Link
+                    to={`/shop/${staticCategory.slug}/${product.fields.slug}`}
+                  >
+                    <div
+                      style={{
+                        backgroundImage: `url("${product.fields.images[0].fields.file.url}")`,
+                      }}
+                      css={categoryStyles.previewImage}
+                    ></div>
+                    <div css={categoryStyles.productInfo}>
+                      <h3>{product.fields.name}</h3>
+                      <small>£{parseFloat(product.fields.price)}</small>
+                    </div>
+                  </Link>
                 </article>
-              )) : <EmptyState />
+              ))
+            ) : (
+              <EmptyState />
+            )
           ) : (
             <LoadingState />
           )}

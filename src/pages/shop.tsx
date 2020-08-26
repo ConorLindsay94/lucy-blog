@@ -25,7 +25,7 @@ const Shop: React.FC = ({ data }) => {
                   fluid={node.displayImage.fluid}
                 />
               </div>
-              <h2 css={globalStyles.categoryTitle}>{node.name}</h2>
+              <h2 css={styles.categoryTitle}>{node.name}</h2>
             </Link>
           </article>
         ))}
@@ -46,10 +46,7 @@ export const pageQuery = graphql`
           slug
           displayImage {
             fluid {
-              base64
-              tracedSVG
-              srcWebp
-              srcSetWebp
+              ...GatsbyContentfulFluid_noBase64
             }
           }
         }
