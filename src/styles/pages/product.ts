@@ -4,8 +4,8 @@ export const styles = {
   wrapper: {
     display: "flex",
     flexDirection: "column",
-    marginTop: "16px",
     [mq[1]]: {
+      marginTop: "16px",
       flexDirection: "row",
       justifyContent: "space-between",
     }
